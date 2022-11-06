@@ -1,12 +1,13 @@
-public long getPowerOfTen(int n){   //getPowerOfTenLoop
-   if (n == 0) 
-   {         
-     return 1;     
-     
-   } 
-   else 
-   {         
-     return 10 * getPowerOfTen(n-1);     //getPowerOfTenLoop?
-     
-   } 
+public class Number6 {
+
+    public long getPowerOfTen(int n) {   //getPowerOfTenLoop
+        if (n == 0) {
+            return 1;
+
+        } else {
+            return 10 * getPowerOfTen(n - 1);     //getPowerOfTenLoop?
+
+        }
+    }
+
 }

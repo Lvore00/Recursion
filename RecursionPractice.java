@@ -1,13 +1,24 @@
-package RecursionPractice;
+//package RecursionPractice;
 
+/**
+ * class: RecursionPractice.java
+ * name: Lilly Vore
+ * date:
+ * description:
+ */
 public class RecursionPractice {
 
     public static void main(String[] args) {
 
-    getNumberOfZerosRecursion(3);
-    numberOfGlovesRecursion(4);
-    getPowerOfTenLoop(3);
-    numberOfGloves(4);
+        RecursionPractice rp = new RecursionPractice();
+
+   int result1 = rp.getNumberOfZerosRecursion(3090);
+   int result2 =  rp.numberOfGlovesRecursion(5);
+   long result3 = rp.getPowerOfTenLoop(3);
+   int result4 =  rp.numberOfGloves(4);
+
+        System.out.println("Result1 - getNumberOfZerosRecursion: " + result1);
+        System.out.println("Result2 - numberOfGlovesRecursion: " + result2);
 
 
 
@@ -60,43 +71,47 @@ public class RecursionPractice {
         }
 
         //Number5
-        public int numberOfGloves(int peopleOfPlanetU101InARoom){
-            if(peopleOfPlanetU101InARoom <=0)
-            {
-                return 0;
+        public int numberOfGloves(int peopleOfPlanetU101InARoom) { //this one
 
-            }
-            else
-            {
-                return 3+numberOfGloves(peopleOfPlanetU101InARoom-1);
-
-            }
+            int gloves;
+            gloves = peopleOfPlanetU101InARoom * 3;
+            return gloves;
         }
 
-        //Number6
+            //Number6
         public long getPowerOfTenLoop(int n){
-            if (n == 0)
-            {
-                return 1;
 
-            }
-            else
-            {
-                return 10 * getPowerOfTen(n-1);
 
+            long result = 1;
+            // getPowerOfTenLoop(3)  ---> 10^3 --> 1000
+            for(int i = 0; i < n; i++){
+                result = result * 10;
             }
+
+            return result;
+
         }
 
         //Number7
         public int numberOfGlovesRecursion(int peopleOfPlanetU101InARoom){
-            int gloves;
-            gloves=peopleOfPlanetU101InARoom*3;
-            return gloves;
-        }
+
+
+                if(peopleOfPlanetU101InARoom <=0)
+                {
+                    return 0;
+
+                }
+                else
+                {
+                    return 3 + numberOfGloves(peopleOfPlanetU101InARoom-1);
+
+                }
+            }
+
   
 
         //Number8
-        int getNumberOfZerosLoop(int n) {
+        public int getNumberOfZerosLoop(int n) {
             int k, count =0;
             while(n > 0)
             {
